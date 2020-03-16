@@ -129,7 +129,6 @@
 
     </nav>
     <!-- hero -->
-    {{#section hero label="1. Hero" priority=1 sortable=true}}
     <section id="hero" class="container my-12 mx-auto px-6">
       <div
         class="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl max-w-100 my-6 sm:mb-4 sm:mt-16 mx-auto"
@@ -158,14 +157,14 @@
               recommendations to you. Trimmed areas recover quickly in the
               Spring.
               <!--
-                {{Hero_Tagline type=html editor=wysiwyg}}
+                {{hero::hero_tagline}}
               -->
             </p>
             <a class="flex items-baseline mt-3 text-red-600 hover:text-indigo-900 focus:text-indigo-900"
               href="">
               <span class="text-xl">Learn more about tree trimming
                 <!---
-                  {{Hero_Link type=html editor=wysiwyg}}
+                  {{hero::hero_link}}
                 -->
               </span>
               <span class="text-xs ml-1">&#x279c;</span></a>
@@ -192,8 +191,6 @@
           class="px-2 opacity-50 hover:opacity-100 focus:opacity-100">CATOOSA</a>
       </div>
 </div>
-{{/section}}
-{{#section service label="2. Services" priority=2}}
 <!-- Services -->
 <div class="md:section--trees"></div>
 <section id="services" class="bg-gray-200">
@@ -217,9 +214,9 @@
           class="flex-1 mx-2 mt-4 mb-6 rounded overflow-hidden bg-white shadow-lg">
           <!--
             <picture>
-            <source srcset="{{image_1 type=image tag=false}}" />
-            <img class="w-full" src="{{image_1 type=image tag=false}}"
-              alt="{{image_1_alt}}" />
+            <source srcset="{{service::image_1}}" />
+            <img class="w-full" src="{{service::image_1}}"
+              alt="{{service::image_1_alt}}" />
           </picture>
         -->
           <img class="w-full"
@@ -325,8 +322,6 @@
       </div>
     </div>
 </section>
-{{/section}}
-{{#section whyUs label="3. Why Choose Us" priority=3}}
 <section id="why-us">
   <div class="container mx-auto lg:mt-6 px-6 lg:py-20">
     <div class="flex items-top flex-wrap mb-20">
@@ -378,8 +373,6 @@
       </div>
     </div>
 </section>
-{{/section}}
-{{#section testimonial label="4. Testimonials" priority=4}}
 <section id="reviews" class="bg-gray-200">
   <div class="container mx-auto py-6">
     <h2
@@ -592,9 +585,7 @@
     </div>
   </div>
 </section>
-{{/section}}
 <!--Call to Action-->
-{{#section callToAction label="5. Estimate Form" priority=5}}
 <section id="estimate" style="
 background-image:
 linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
@@ -783,9 +774,7 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
       </div>
     </form>
 </section>
-{{/section}}
 <!--Service Area -->
-{{#section serviceArea label="6. Service Area" priority=6}}
 <section id="service-area">
   <div class="container mx-auto px-6 text-center py-20">
     <h2
@@ -834,7 +823,6 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
   </div>
   </div>
 </section>
-{{/section}}
 <!--Footer-->
 <div class="md:footer-top"></div>
 <div
