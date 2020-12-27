@@ -1,17 +1,14 @@
 <!DOCTYPE html>
 <div>
-
   <head>
     <title>Atkins Tree Care | Proudly serving the Tulsa, Oklahoma area</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preload" href="fonts/400-regular.woff2" as="font"
-      type="font/woff2" crossorigin="">
-    <link rel="preload" href="fonts/600-bold.woff2" as="font" type="font/woff2"
-      crossorigin="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preload" href="fonts/400-regular.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="fonts/600-bold.woff2" as="font" type="font/woff2">
 
     <link rel="stylesheet" type="text/css" href="stylesheets/tailwind.css">
+    <link href="stylsheets/aos.css" rel="stylesheet">
     <style>
       @font-face {
         font-family: ATC;
@@ -52,38 +49,38 @@
 
     </style>
     <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.3/dist/alpine.js"
+      src="javascripts/alpine.js"
       defer></script>
   </head>
 
-  <body class="text-gray-700 bg-white antialiased">
+  <body class="antialiased text-gray-700 bg-white">
     <a class="sr-only" href="#hero">Skip to main content</a>
     <!--Nav-->
-    <nav id="nav"
-      class="flex items-center justify-between flex-wrap shadow-lg px-6 py-2 w-full z-10 top-0"
+    <nav id="nav" style="min-width:385px;"
+      class="top-0 z-10 flex flex-wrap items-center justify-between w-full px-6 py-2 shadow"
       x-data="{ menuOpen: false }" @keydown.escape="menuOpen = false"
       :class="{ 'bg-gray-200' : menuOpen , 'bg-white' : !menuOpen}">
 
-      <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <div class="flex items-center flex-shrink-0 mr-6 text-white">
         <a class="text-2xl lg:text-4xl" href="/">
-          <img class="mr-4 hidden shake md:block" src="images/atkins-logo.svg"
-            width="100" height="100">
+          <img class="hidden mr-4 shake md:block" src="images/atkins-logo.svg"
+            width="60px" height="60px">
         </a>
-        <a class="text-gray-900 hover:text-gray-800 items-center text-2xl lg:text-4xl"
+        <a class="items-center text-2xl text-gray-900 hover:text-gray-800 lg:text-4xl"
           style="line-height:1.5rem;" href="#">
           <span
-            class="font-bold xs:text-xl sm:text-2xl md:text-4xl self-center">Atkins
+            class="self-center font-bold xs:text-xl sm:text-2xl md:text-4xl">Atkins
             Tree Care<br><span
-              class="text-sm md:text-base xs:tracking-tighter sm:tracking-tight text-blue-500">Proudly
+              class="text-sm text-blue-500 md:text-base xs:tracking-tighter sm:tracking-tight">Proudly
               Serving the Greater Tulsa area</span></span>
         </a>
       </div>
 
       <button @click="menuOpen = !menuOpen" type="button"
-        class="block xl:hidden px-2 text-gray-900 hover:text-gray-600 focus:outline-none focus:text-white"
+        class="block px-2 text-gray-900 xl:hidden hover:text-gray-600 focus:outline-none"
         :class="{ 'transition transform-180': menuOpen }">
-        <svg class="h-12 w-12 fill-current" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24" width="1em" height="auto">
+        <svg class="w-12 h-12 fill-current" xmlns="http://www.w3.org/2000/svg"
+          viewBox="0 0 24 24" width="1em" height="1em">
           <path x-show="menuOpen" fill-rule="evenodd" clip-rule="evenodd"
             d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
           <path x-show="!menuOpen" fill-rule="evenodd"
@@ -91,7 +88,7 @@
         </svg>
       </button>
 
-      <div class="w-full flex-grow xl:flex xl:items-center xl:w-auto"
+      <div class="flex-grow w-full xl:flex xl:items-center xl:w-auto"
         :class="{ 'block shadow-3xl': menuOpen, 'hidden': !menuOpen }"
         @click.away="menuOpen = false" x-show="true"
         x-transition:enter="ease-out duration-200"
@@ -102,25 +99,25 @@
         x-transition:leave-end="opacity-0 transform">
 
         <ul
-          class="pt-6 xl:pt-0 list-reset xl:flex justify-end flex-1 items-center">
-          <li class="mr-3 hover:bg-gray-400 rounded">
-            <a class="block py-2 px-4 text-gray-800 hover:text-gray-900 text-xl"
+          class="items-center justify-end flex-1 pt-6 xl:pt-0 list-reset xl:flex">
+          <li class="mr-3 rounded hover:bg-gray-100">
+            <a style="border-color: #fff;" class="block px-4 py-2 xl:font-bold text-xl border-white border-b-4 hover:border-gray-200 text-gray-800 hover:text-gray-900 xl:rounded xl:px-6 xl:shadow"
               href="#services" @click="menuOpen = false">Services</a>
           </li>
-          <li class="mr-3 hover:bg-gray-400 rounded">
-            <a class="block py-2 px-4 text-gray-800 hover:text-gray-900 text-xl"
+          <li class="mr-3 rounded hover:bg-gray-100">
+            <a class="block px-4 py-2 xl:font-bold text-xl text-gray-800 hover:text-gray-900 xl:rounded xl:px-6 xl:shadow"
               href="#why-us" @click="menuOpen = false">Why Us?</a>
           </li>
-          <li class="mr-3 hover:bg-gray-400 rounded">
-            <a class="block py-2 px-4 text-gray-800 hover:text-gray-900 text-xl"
+          <li class="mr-3 rounded hover:bg-gray-100">
+            <a class="block px-4 py-2 xl:font-bold text-xl text-gray-800 hover:text-gray-900 xl:rounded xl:px-6 xl:shadow"
               href="#estimate" @click="menuOpen = false">Contact</a>
           </li>
-          <li class="mr-3 hover:bg-blue-200 rounded">
-            <a class="block bg-transparent xl:bg-blue-500 xl:hover:bg-blue-600 xl:border-b-4 xl:border-blue-700 text-blue-600 xl:text-white font-bold xl:rounded py-2 xl:py-4 px-4 xl:px-6 xl:shadow-lg xl:uppercase xl:tracking-wide text-xl"
+          <li class="mr-3 rounded hover:bg-blue-200">
+            <a class="block px-4 py-2 text-xl font-bold text-blue-600 bg-transparent xl:bg-blue-500 xl:hover:bg-blue-600 xl:border-b-4 xl:border-blue-700 xl:text-white xl:rounded xl:px-6 xl:shadow xl:uppercase"
               href="#estimate" @click="menuOpen = false">Free Quote</a>
           </li>
-          <li class="mr-3 hover:bg-red-200 rounded">
-            <a class="block bg-transparent xl:bg-red-500 xl:hover:bg-red-600 xl:border-b-4 xl:border-red-700 text-red-600 xl:text-white font-bold xl:rounded py-2 xl:py-4 px-4 xl:px-6 xl:shadow-lg xl:uppercase xl:tracking-wide text-xl"
+          <li class="mr-3 rounded hover:bg-red-200">
+            <a class="block px-4 py-2 text-xl font-bold text-red-600 bg-transparent xl:bg-red-500 xl:hover:bg-red-600 xl:border-b-4 xl:border-red-700 xl:text-white xl:rounded xl:px-6 xl:shadow xl:uppercase"
               href="#emergency" @click="menuOpen = false">Emergency</a></a>
           </li>
         </ul>
@@ -129,30 +126,30 @@
 
     </nav>
     <!-- hero -->
-    <section id="hero" class="container my-12 mx-auto px-6">
+    <section id="hero" class="container px-6 mx-auto my-12">
       <div
-        class="relative rounded-lg block md:flex items-center bg-gray-100 shadow-xl max-w-100 my-6 sm:mb-4 sm:mt-16 mx-auto"
+        class="relative items-center block mx-auto my-6 bg-gray-100 rounded-lg shadow md:flex max-w-100 sm:mb-4 sm:mt-16"
         style="min-height: 18rem;">
         <div
-          class="relative w-full md:w-2/5 h-full overflow-hidden rounded-t-lg md:rounded-t-none md:rounded-l-lg"
+          class="relative w-full h-full overflow-hidden rounded-t-lg md:w-2/5 md:rounded-t-none md:rounded-l-lg"
           style="min-height: 19rem;">
-          <img class="absolute inset-0 w-full h-full object-cover object-center"
+          <img class="absolute inset-0 object-cover object-center w-full h-full"
             srcset="images/slider@1x.jpg 1x, images/slider@2x.jpg 2x"
             src="images/slider@1x.jpg"
             alt="Winter trimming can be an important component of tree maintenance">
           <div class="absolute inset-0 w-full h-full bg-red-900 opacity-50">
           </div>
           <div
-            class="absolute inset-0 w-full h-full flex items-center justify-center">
+            class="absolute inset-0 flex items-center justify-center w-full h-full">
             <span
-              class="text-white font-bold text-3xl leading-normal">WINTER<br>MAINTENANCE</span>
+              class="text-3xl font-bold leading-normal text-white">WINTER<br>MAINTENANCE</span>
           </div>
         </div>
         <div
-          class="w-full md:w-3/5 h-full flex items-center bg-gray-100 rounded-lg">
+          class="flex items-center w-full h-full bg-gray-100 rounded-lg md:w-3/5">
           <div class="px-6 py-4 md:pr-24 md:pl-16 md:py-12">
             <p class="text-gray-600">
-              Winter is the best time to trim or remove trees. We can clearly
+              Winter is a great time to trim or remove trees. We can clearly
               see the structure of the tree, allowing us to provide better
               recommendations to you. Trimmed areas recover quickly in the
               Spring.
@@ -160,24 +157,24 @@
                 {{hero::hero_tagline}}
               -->
             </p>
-            <a class="flex items-baseline mt-3 text-red-600 hover:text-indigo-900 focus:text-indigo-900"
+            <a class="flex items-baseline mt-3 text-red-600 hover:text-red-900 focus:text-red-900"
               href="">
-              <span class="text-xl">Learn more about tree trimming
+              <span class="text-xl font-bold">Learn more about tree trimming
                 <!---
                   {{hero::hero_link}}
                 -->
               </span>
-              <span class="text-xs ml-1">&#x279c;</span></a>
+              <span class="ml-1 text-xs">&#x279c;</span></a>
           </div>
           <svg
-            class="hidden md:block absolute inset-y-0 h-full w-24 fill-current text-gray-100 -ml-12"
-            viewBox="0 0 100 100" preserveAspectRatio="none">
+            class="absolute inset-y-0 hidden w-24 h-full -ml-12 text-gray-100 fill-current md:block"
+            viewBox="0 0 100 100" preserveAspectRatio="none" height="300px" width="auto">
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
         </div>
       </div>
       <div
-        class="hidden sm:flex items-center justify-between md:mb-8 lg:md-16 max-w-6xl mx-auto">
+        class="items-center justify-between hidden max-w-6xl mx-auto sm:flex md:mb-8 lg:md-16">
         <a href="#service-area"
           class="px-2 opacity-50 hover:opacity-100 focus:opacity-100">TULSA</a>
         <a href="#service-area"
@@ -194,24 +191,24 @@
 <!-- Services -->
 <div class="md:section--trees"></div>
 <section id="services" class="bg-gray-200">
-  <div class="container mx-auto px-6 pb-6">
+  <div class="container px-6 pb-6 mx-auto">
     <h2
-      class="md:hidden text-4xl font-bold text-center text-gray-800 pt-12 mb-2">
+      class="pt-12 mb-2 text-4xl font-bold text-center text-gray-800 md:hidden">
       Services</h2>
     <h2
-      class="slideInRight animated hidden md:block text-3xl bg-gray-200-4 font-bold text-center text-gray-800 mb-2">
+      class="hidden mb-2 text-3xl font-bold text-center text-gray-800 slideInRight animated md:block bg-gray-200-4">
       We provide complete tree care services to residential and commercial
       customers
     </h2>
-    <div class="bg-red-500 w-1/6 h-2 mb-8 mx-auto"></div>
-    <h3 class="text-center text-xl mb-8">We offer a full range of tree care
+    <div class="w-1/6 h-2 mx-auto mb-8 bg-red-500"></div>
+    <h3 class="mb-8 text-xl text-center">We offer a full range of tree care
       services to home owners, property managers,
       and
       commercial developers</h3>
-    <div class="flex flex-wrap flex-row mb-20">
+    <div class="flex flex-row flex-wrap mb-20">
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 rounded overflow-hidden bg-white shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <!--
             <picture>
             <source srcset="{{service::image_1}}" />
@@ -223,8 +220,8 @@
             srcset="images/tree-care@1x.jpg 1x, images/tree-care@2x.jpg 2x"
             src="images/tree-care@1x.jpg" alt="Tree removal in Tulsa, Oklahoma">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Complete Tree Care</div>
-            <p class="text-gray-700 text-base pb-4">
+            <div class="mb-2 text-xl font-bold">Complete Tree Care</div>
+            <p class="pb-4 text-base text-gray-700">
               We offer <a class="underline" href="#">long-term health
                 solutions</a> for your trees, providing peace of
               mind for the safety,
@@ -236,13 +233,13 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 rounded overflow-hidden bg-white shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="w-full"
             srcset="images/stump@1x.jpg 1x, images/stump@2x.jpg 2x"
             src="images/stump@1x.jpg" alt="Tree removal in Tulsa, Oklahoma">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Tree Removal</div>
-            <p class="text-gray-700 text-base pb-4">
+            <div class="mb-2 text-xl font-bold">Tree Removal</div>
+            <p class="pb-4 text-base text-gray-700">
               Tree removal can be complex and dangerous and should not be
               attempted alone.
               Our experienced crews provide safe and efficient tree removal.
@@ -252,14 +249,15 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 rounded overflow-hidden bg-white shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="w-full"
             srcset="images/tree-trimming@1x.jpg 1x, images/tree-trimming@2x.jpg 2x"
             src="images/tree-trimming@1x.jpg"
             alt="Tree trimming in Tulsa, Oklahoma">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Tree Trimming</div>
-            <p class="text-gray-700 text-base pb-4">
+            <div class="mb-2 text-xl font-bold">Tree
+              Trimming</div>
+            <p class="pb-4 text-base text-gray-700">
               Most trees require regular trimming.
               We offer seasonal and on-demand trimming services that help avoid
               larger problems down the road.
@@ -269,15 +267,15 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 rounded overflow-hidden bg-white shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="object-fill"
             srcset="images/grinding@1x.jpg 1x, images/grinding@2x.jpg 2x"
             src="images/grinding@1x.jpg"
             alt="Stump grinding and removal in Tulsa, Oklahoma">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Stump Grinding &amp; Removal
+            <div class="mb-2 text-xl font-bold">Stump Grinding &amp; Removal
             </div>
-            <p class="text-gray-700 text-base">
+            <p class="text-base text-gray-700">
               Tree stumps can be <a class="underline" href="#">unsightly and
                 dangerous</a>.
               We can grind or remove stumps to restore your landscape.
@@ -287,14 +285,14 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 rounded overflow-hidden bg-white shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="object-contain"
             srcset="images/emergency@1x.jpg 1x, images/emergency@2x.jpg 2x"
             src="images/emergency@1x.jpg"
             alt="Emergency Tree Assistance in Tulsa, Oklahoma">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Emergency Assistance</div>
-            <p class="text-gray-700 text-base">
+            <div class="mb-2 text-xl font-bold">Emergency Assistance</div>
+            <p class="text-base text-gray-700">
               We understand the urgency when disaster strikes.
               We provide <a class="underline" href="#">24/7 emergency tree
                 services<a /> for both commercial and
@@ -305,14 +303,14 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 rounded overflow-hidden bg-white shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="object-contain"
             srcset="images/firewood@1x.jpg 1x, images/firewood@2x.jpg 2x"
             src="images/firewood@1x.jpg"
             alt="Firewood and mulch in Tulsa, Oklahoma">
           <div class="px-6 py-4">
-            <div class="font-bold text-xl mb-2">Firewood &amp; Mulch</div>
-            <p class="text-gray-700 text-base">
+            <div class="mb-2 text-xl font-bold">Firewood &amp; Mulch</div>
+            <p class="text-base text-gray-700">
               We offer local delivery and pickup of carefully chosen hardwood
               firewood and wood chips for mulching. <a class="underline"
                 href="#">View our available stock</a>.
@@ -323,19 +321,19 @@
     </div>
 </section>
 <section id="why-us">
-  <div class="container mx-auto lg:mt-6 px-6 lg:py-20">
-    <div class="flex items-top flex-wrap mb-20">
-      <div
-        class="flex self-start h-0 lg:h-auto invisible lg:visible w-full lg:w-1/2">
-        <img class="shadow-lg rounded m-0 align-middle"
+  <div class="container px-6 mx-auto lg:mt-6 lg:py-20">
+    <div class="flex flex-wrap mb-20 items-top">
+      <div data-aos="fade-right"
+        class="flex self-start invisible w-full h-0 lg:h-auto lg:visible lg:w-1/2">
+        <img class="m-0 align-middle rounded shadow-lg"
           srcset="images/left@1x.jpg 1x, images/left@2x.jpg 2x"
           src="images/left@1x.jpg" alt="Tree trimming in progress!" />
       </div>
-      <div class="w-full lg:w-1/2 lg:pl-20 mb-20">
+      <div class="w-full mb-20 lg:w-1/2 lg:pl-20" data-aos="fade-left">
         <h2
-          class="slideInRight animated text-3xl font-bold text-center text-gray-800 mt-20 lg:mt-0 mb-2">
+          class="mt-20 mb-2 text-3xl font-bold text-center text-gray-800 slideInRight animated lg:mt-0">
           Why Choose Atkins Tree Care?</h2>
-        <div class="bg-red-500 w-1/6 h-2 mb-8 mx-auto"></div>
+        <div class="w-1/6 h-2 mx-auto mb-8 bg-red-500"></div>
         <p class="mb-4">As a locally-owned company, Atkins Tree Care understands
           the importance and value of trees in
           Green Country. </p>
@@ -346,45 +344,45 @@
           healthy, and beautiful.
         </p>
         <div class="flex flex-wrap">
-          <div class="w-full sm:w-1/2 mb-8 sm:pr-4">
+          <div class="w-full mb-8 sm:w-1/2 sm:pr-4">
             <h3 class="font-bold text-center">Accredited</h3>
             <p class="text-center">Our company and employees are fully licensed,
               bonded, and insured</p>
           </div>
-          <div class="w-full sm:w-1/2 mb-8 sm:pl-4">
+          <div class="w-full mb-8 sm:w-1/2 sm:pl-4">
             <h3 class="font-bold text-center">Experienced</h3>
             <p class="text-center">Atkins Tree Care has been serving this area
               for more than a decade</p class="text-center">
           </div>
-          <div class="w-full sm:w-1/2 mb-8 sm:pr-4">
+          <div class="w-full mb-8 sm:w-1/2 sm:pr-4">
             <h3 class="font-bold text-center">Satisfied Customers</h3>
             <p class="text-center">Our customer reviews tell the story of our
               excellent customer service</p class="text-center">
           </div>
-          <div class="w-full sm:w-1/2 mb-8 sm:pl-4">
+          <div class="w-full mb-8 sm:w-1/2 sm:pl-4">
             <h3 class="font-bold text-center">Competitive rates</h3>
             <p class="text-center">We strive to keep our pricing competitive and
               fair</p class="text-center">
           </div>
           <button
-            class="w-5/6 xl:w-1/2 bg-blue-500 hover:bg-blue-600 border-b-4 border-blue-700 text-white mx-auto mt-12 text-center font-bold rounded shadow-lg py-4 px-8 shadow-lg uppercase tracking-wide">
+            class="w-5/6 px-8 py-4 mx-auto mt-12 font-bold tracking-wide text-center text-white uppercase bg-blue-500 border-b-4 border-blue-700 rounded shadow-lg xl:w-1/2 hover:bg-blue-600">
             Get a Free Quote</button>
         </div>
       </div>
     </div>
 </section>
 <section id="reviews" class="bg-gray-200">
-  <div class="container mx-auto py-6">
+  <div class="container py-6 mx-auto">
     <h2
-      class="slideInRight animated text-3xl font-bold text-center text-gray-800 mt-20 mb-8">
+      class="mt-20 mb-8 text-3xl font-bold text-center text-gray-800 slideInRight animated">
       Don’t Just Take Our Word For It
     </h2>
-    <div class="bg-red-500 w-1/6 h-2 mb-8 mx-auto"></div>
+    <div class="w-1/6 h-2 mx-auto mb-8 bg-red-500"></div>
     <p class="mb-8 text-center">As a locally-owned company, Atkins Tree Care
       understands the importance and value of trees in Green Country.</p>
     <div class="flex flex-wrap">
-      <div class="w-full md:flex-1 bg-white rounded shadow p-6 m-6">
-        <p class="text-gray-900 mb-6">
+      <div class="w-full p-6 m-6 bg-white rounded shadow md:flex-1">
+        <p class="mb-6 text-gray-900">
           “Atkins was responsive, timely and a pleasure to work with. I
           contacted them via Yelp on Thursday, Friday they came out to the
           residence to take a look and provided a quote on site. Monday the work
@@ -394,7 +392,7 @@
         </p>
         <div class="flex">
           <div>
-            <svg class="fill-current text-red-600" aria-hidden="true"
+            <svg class="text-red-600 fill-current" aria-hidden="true"
               focusable="false" data-prefix="fab" data-icon="yelp" role="img"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
               width="48" height="48">
@@ -412,7 +410,7 @@
             <div class="pl-3">
               <ul class="flex flex-nowrap">
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -422,7 +420,7 @@
                   </svg>
                 </li>
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -432,7 +430,7 @@
                   </svg>
                 </li>
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -442,7 +440,7 @@
                   </svg>
                 </li>
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -452,7 +450,7 @@
                   </svg>
                 </li>
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -466,8 +464,8 @@
           </div>
         </div>
       </div>
-      <div class="w-full md:flex-1 bg-white rounded shadow p-6 m-6">
-        <p class="text-gray-900 mb-6">
+      <div class="w-full p-6 m-6 bg-white rounded shadow md:flex-1">
+        <p class="mb-6 text-gray-900">
           “Excellent customer service. Ben came out & gave me an estimate on
           removal of half a tree that went down in a storm & trimming low limbs
           on
@@ -478,7 +476,7 @@
         </p>
         <div class="flex">
           <div>
-            <svg class="fill-current text-red-600" aria-hidden="true"
+            <svg class="text-red-600 fill-current" aria-hidden="true"
               focusable="false" data-prefix="fab" data-icon="yelp" role="img"
               xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"
               width="48" height="48">
@@ -496,7 +494,7 @@
             <div class="pl-3">
               <ul class="flex flex-nowrap">
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -506,7 +504,7 @@
                   </svg>
                 </li>
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -516,7 +514,7 @@
                   </svg>
                 </li>
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -526,7 +524,7 @@
                   </svg>
                 </li>
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -536,7 +534,7 @@
                   </svg>
                 </li>
                 <li>
-                  <svg class="fill-current text-yellow-400" aria-hidden="true"
+                  <svg class="text-yellow-400 fill-current" aria-hidden="true"
                     focusable="false" data-prefix="fas" data-icon="star"
                     role="img" xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 576 512" width="24" height="24">
@@ -551,32 +549,33 @@
         </div>
       </div>
     </div>
-    <div class="mx-0 px-0 flex flex-row items-center justify-center my-12 mx-8">
-      <p class="text-xl md:text-3xl mr-8 md:mr-16">Read more reviews:</p>
-      <div class="bg-gray-600 text-white mr-4 md:mr-8">
+    <div class="flex flex-row items-center justify-center px-0 mx-8 my-12"
+      data-aos="fade-right">
+      <p class="mr-8 text-xl md:text-3xl md:mr-16">Read more reviews:</p>
+      <div class="mr-4 text-white bg-gray-600 md:mr-8">
         <a
           href="https://www.facebook.com/pg/Atkins-Tree-Care-632287823525206/reviews/"><svg
             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-            class="w-12 h-12 md:w-24 md:h-24 p-2 md:p-6 bg-blue-700 hover:bg-blue-600"
+            class="w-12 h-12 p-2 bg-blue-700 md:w-24 md:h-24 md:p-6 hover:bg-blue-600"
             viewBox="0 0 320 512">
             <path fill="currentColor"
               d="M279.14 288l14.22-92.66h-88.91v-60.13c0-25.35 12.42-50.06 52.24-50.06h40.42V6.26S260.43 0 225.36 0c-73.22 0-121.08 44.38-121.08 124.72v70.62H22.89V288h81.39v224h100.17V288z" />
           </svg></a>
       </div>
-      <div class="bg-gray-600 text-white mr-4 md:mr-8">
+      <div class="mr-4 text-white bg-gray-600 md:mr-8">
         <a
           href="http://search.google.com/local/writereview?placeid=ChIJ64VAIJVQtocRWkSPS3XdqvE"><svg
             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-            class="w-12 h-12 md:w-24 md:h-24 p-2 md:p-6 bg-yellow-500 hover:bg-yellow-400"
+            class="w-12 h-12 p-2 bg-yellow-500 md:w-24 md:h-24 md:p-6 hover:bg-yellow-400"
             viewBox="0 0 488 512">
             <path fill="currentColor"
               d="M488 261.8C488 403.3 391.1 504 248 504 110.8 504 0 393.2 0 256S110.8 8 248 8c66.8 0 123 24.5 166.3 64.9l-67.5 64.9C258.5 52.6 94.3 116.6 94.3 256c0 86.5 69.1 156.6 153.7 156.6 98.2 0 135-70.4 140.8-106.9H248v-85.3h236.1c2.3 12.7 3.9 24.9 3.9 41.4z" />
           </svg></a>
       </div>
-      <div class="bg-gray-600 text-white mr-4 md:mr-8">
+      <div class="mr-4 text-white bg-gray-600 md:mr-8">
         <a href="https://www.yelp.com/biz/atkins-tree-care-tulsa"><svg
             xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-            class="w-12 h-12 md:w-24 md:h-24 p-2 md:p-6 bg-red-700 hover:bg-red-600"
+            class="w-12 h-12 p-2 bg-red-700 md:w-24 md:h-24 md:p-6 hover:bg-red-600"
             viewBox="0 0 384 512">
             <path fill="currentColor"
               d="M42.9 240.32l99.62 48.61c19.2 9.4 16.2 37.51-4.5 42.71L30.5 358.45a22.79 22.79 0 01-28.21-19.6 197.16 197.16 0 019-85.32 22.8 22.8 0 0131.61-13.21zm44 239.25a199.45 199.45 0 0079.42 32.11A22.78 22.78 0 00192.94 490l3.9-110.82c.7-21.3-25.5-31.91-39.81-16.1l-74.21 82.4a22.82 22.82 0 004.09 34.09zm145.34-109.92l58.81 94a22.93 22.93 0 0034 5.5 198.36 198.36 0 0052.71-67.61A23 23 0 00364.17 370l-105.42-34.26c-20.31-6.5-37.81 15.8-26.51 33.91zm148.33-132.23a197.44 197.44 0 00-50.41-69.31 22.85 22.85 0 00-34 4.4l-62 91.92c-11.9 17.7 4.7 40.61 25.2 34.71L366 268.63a23 23 0 0014.61-31.21zM62.11 30.18a22.86 22.86 0 00-9.9 32l104.12 180.44c11.7 20.2 42.61 11.9 42.61-11.4V22.88a22.67 22.67 0 00-24.5-22.8 320.37 320.37 0 00-112.33 30.1z" />
@@ -590,95 +589,99 @@
 background-image:
 linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
 ">
-  <div class="container mx-auto px-6 text-center py-20">
+  <div class="container px-6 py-20 mx-auto text-center">
     <h2
-      class="slideInRight animated mb-6 text-4xl font-bold text-center text-white">
+      class="mb-6 text-4xl font-bold text-center text-white slideInRight animated">
       Free Estimate
     </h2>
-    <div class="bg-blue-500 w-1/6 h-2 mb-8 mx-auto"></div>
+    <div class="w-1/6 h-2 mx-auto mb-8 bg-blue-500"></div>
     <h3 class="my-4 text-2xl text-white">
       Every tree is unique. By coming to your home or business in person, we can
       quickly
       provide a cost-effective, accurate estimate for you. You can also call us
       to schedule a visit at: <a href="tel:+19186914047">918-691-4047</a> </h3>
-    <form action"#" role="form">
-      <div class="px-8 pt-6 pb-8 mb-4 flex flex-col text-left my-2">
+      <form
+      action="https://formspree.io/f/mpzojljw"
+      method="POST">
+      <input type="text" name="_gotcha" style="display:none" />
+      <input type="hidden" name="_next" value="thanks.html" />
+      <div class="flex flex-col px-8 pt-6 pb-8 my-2 mb-4 text-left">
         <div class="-mx-3 md:flex">
-          <div class="md:w-1/3 px-3 mb-6">
+          <div class="px-3 mb-6 md:w-1/3">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-name">
               Name
             </label>
             <input
-              class="appearance-none block w-full bg-grey-lighter text-gray-900 border border-red rounded py-3 px-4 mb-3"
-              id="grid-name" type="text" placeholder="Your Name">
+              class="block w-full px-4 py-3 mb-3 text-gray-900 border rounded appearance-none bg-grey-lighter border-red"
+              id="grid-name" type="text" placeholder="Your Name" name="name" required />
           </div>
-          <div class="md:w-1/3 px-3 mb-6">
+          <div class="px-3 mb-6 md:w-1/3">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
-              for="grid-phone-number">
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
+              for="grid-phone-number" required>
               Phone Number
             </label>
             <input
-              class="appearance-none block w-full bg-grey-lighter text-gray-900 border border-grey-lighter rounded py-3 px-4"
-              id="grid-phone-number" type="tel" placeholder="Your phone number">
+              class="block w-full px-4 py-3 text-gray-900 border rounded appearance-none bg-grey-lighter border-grey-lighter"
+              id="grid-phone-number" type="tel" placeholder="Your phone number" name="phone" />
           </div>
-          <div class="md:w-1/3 px-3 mb-6">
+          <div class="px-3 mb-6 md:w-1/3">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-email">
               Email
             </label>
             <input
-              class="appearance-none block w-full bg-grey-lighter text-gray-900 border border-grey-lighter rounded py-3 px-4"
-              id="grid-email" type="email" placeholder="Your Email Address">
+              class="block w-full px-4 py-3 text-gray-900 border rounded appearance-none bg-grey-lighter border-grey-lighter"
+              id="grid-email" type="email" placeholder="Your Email Address" name="_replyto" />
           </div>
         </div>
         <div class="-mx-3 md:flex">
-          <div class="md:w-1/3 px-3 mb-6">
+          <div class="px-3 mb-6 md:w-1/3">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-service-address">
               Service Address
             </label>
             <input
-              class="appearance-none block w-full bg-grey-lighter text-gray-900 border border-grey-lighter rounded py-3 px-4 mb-3"
-              id="grid-service-address" type="text" placeholder="Street">
+              class="block w-full px-4 py-3 mb-3 text-gray-900 border rounded appearance-none bg-grey-lighter border-grey-lighter"
+              id="grid-service-address" type="text" placeholder="Street" name="service-address" required>
           </div>
-          <div class="md:w-1/3 px-3 mb-6 md:mb-0">
+          <div class="px-3 mb-6 md:w-1/3 md:mb-0">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-city">
               City
             </label>
             <input
-              class="appearance-none block w-full bg-grey-lighter text-gray-900 border border-grey-lighter rounded py-3 px-4 mb-3"
-              id="grid-city" type="text" placeholder="City">
+              class="block w-full px-4 py-3 mb-3 text-gray-900 border rounded appearance-none bg-grey-lighter border-grey-lighter"
+              id="grid-city" type="text" placeholder="City" name="city" required>
           </div>
-          <div class="md:w-1/3 px-3 mb-6">
+          <div class="px-3 mb-6 md:w-1/3">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-zip">
               Zipcode
             </label>
             <input
-              class="appearance-none block w-full bg-grey-lighter text-gray-900 border border-grey-lighter rounded py-3 px-4 mb-3"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 border rounded appearance-none bg-grey-lighter border-grey-lighter"
               id="grid-zip" type="text" inputmode="tel" pattern="[0-9]*"
-              max="99999" placeholder="Zipcode">
+              max="99999" placeholder="Zipcode" name="zipcode" required>
           </div>
         </div>
         <div class="flex flex-wrap -mx-3">
-          <div class="w-full md:w-1/3 px-3 mb-6">
+          <div class="w-full px-3 mb-6 md:w-1/3">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-service">
               Service Type
             </label>
             <div class="relative">
               <select
-                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-desired-service">
+                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-desired-service" name="service-type" required>
                 <option>Complete Tree Care</option>
                 <option>Tree Trimming</option>
                 <option>Tree Removal</option>
@@ -687,8 +690,8 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
                 <option>Other / Not Listed</option>
               </select>
               <div
-                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-900">
-                <svg class="fill-current h-4 w-4"
+                class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-900 pointer-events-none">
+                <svg class="w-4 h-4 fill-current"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path
                     d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
@@ -696,23 +699,23 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/3 px-3 mb-6">
+          <div class="w-full px-3 mb-6 md:w-1/3">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-property-type">
               Property Type
             </label>
             <div class="relative">
               <select
-                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-property-type">
+                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-property-type" name="property-type" required>
                 <option>Residential (owned)</option>
                 <option>Residential (rental)</option>
                 <option>Commercial</option>
               </select>
               <div
-                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-900">
-                <svg class="fill-current h-4 w-4"
+                class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-900 pointer-events-none">
+                <svg class="w-4 h-4 fill-current"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path
                     d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
@@ -720,24 +723,24 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
               </div>
             </div>
           </div>
-          <div class="w-full md:w-1/3 px-3 mb-6">
+          <div class="w-full px-3 mb-6 md:w-1/3">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-service-area">
               Service Area
             </label>
             <div class="relative">
               <select
-                class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-service-area">
+                class="block w-full px-4 py-3 pr-8 leading-tight text-gray-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-service-area" name="Service area" required>
                 <option>Street</option>
                 <option>Side of property</option>
                 <option>Rear of property</option>
               </select>
 
               <div
-                class="pointer-events-none absolute inset-y-0 right-0 flex items-center px-2 text-gray-900">
-                <svg class="fill-current h-4 w-4"
+                class="absolute inset-y-0 right-0 flex items-center px-2 text-gray-900 pointer-events-none">
+                <svg class="w-4 h-4 fill-current"
                   xmlns="http://www.w3.org/2000/svg" viewBox="0 0 20 20">
                   <path
                     d="M9.293 12.95l.707.707L15.657 8l-1.414-1.414L10 10.828 5.757 6.586 4.343 8z" />
@@ -746,29 +749,29 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
             </div>
           </div>
         </div>
-        <div class="flex flex-wrap -mx-3 justify-between">
-          <div class="w-full md:w-2/3 px-3 mb-6 md:mb-0">
+        <div class="flex flex-wrap justify-between -mx-3">
+          <div class="w-full px-3 mb-6 md:w-2/3 md:mb-0">
             <label
-              class="block uppercase tracking-wide text-white text-xs font-bold mb-2"
+              class="block mb-2 text-xs font-bold tracking-wide text-white uppercase"
               for="grid-message">
               Message (optional)
             </label>
             <div class="relative">
               <textarea
-                class="block appearance-none w-full h-32 bg-gray-200 border border-gray-200 text-gray-900 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500"
-                id="grid-message"></textarea>
+                class="block w-full h-32 px-4 py-3 pr-8 leading-tight text-gray-900 bg-gray-200 border border-gray-200 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
+                id="grid-message" name="message"></textarea>
             </div>
           </div>
-          <div class="w-full md:w-1/3 px-3 md:mt-6 self-end">
+          <div class="self-end w-full px-3 md:w-1/3 md:mt-6">
 
-            <a class="inline-flex justify-center appearance-none w-full bg-blue-500 hover:bg-blue-600 border-b-4 border-blue-700 text-white font-bold rounded py-4 px-6 shadow-lg hover:shadow-md uppercase tracking-wide"
-              href="#"><span class="mr-2 whitespace-no-wrap">Submit
-                Request</span>
+            <button type="submit" class="inline-flex justify-center w-full px-6 py-4 font-bold tracking-wide text-white uppercase bg-blue-500 border-b-4 border-blue-700 rounded shadow-lg appearance-none hover:bg-blue-600 hover:shadow-md">
+              <span class="mr-2 whitespace-no-wrap">Submit Request</span>
               <svg xmlns="http://www.w3.org/2000/svg" class="" width="24"
                 height="24" viewBox="0 0 24 24">
                 <path fill="currentcolor"
                   d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
-              </svg></a>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
@@ -776,26 +779,26 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
 </section>
 <!--Service Area -->
 <section id="service-area">
-  <div class="container mx-auto px-6 text-center py-20">
+  <div class="container px-6 py-20 mx-auto text-center">
     <h2
-      class="slideInRight animated text-3xl font-bold text-center text-gray-800 mb-8">
+      class="mb-8 text-3xl font-bold text-center text-gray-800 slideInRight animated">
       Service Area
     </h2>
-    <div class="bg-red-500 w-1/6 h-2 mb-8 mx-auto"></div>
+    <div class="w-1/6 h-2 mx-auto mb-8 bg-red-500"></div>
     <div class="flex flex-wrap items-start">
-      <div class="w-full md:w-1/2 p-6">
-        <img class="shadow-lg rounded"
+      <div class="w-full p-6 md:w-1/2" data-aos="fade-right">
+        <img class="rounded shadow-lg"
           srcset="images/service_area@1x.jpg 1x, images/service_area@2x.jpg 2x"
           src="images/service_area@1x.jpg"
           alt="map of service area for Atkins Tree Care">
       </div>
-      <div class="flex flex-wrap w-full md:w-1/2 p-6">
+      <div class="flex flex-wrap w-full p-6 md:w-1/2" data-aos="fade-left">
         <p class="text-left">Atkins Tree Care is proud to service
           the
           Greater Tulsa area. Our general area is shown on the map. If
           you fall just outside this area, we will do our best to assist you!
         </p>
-        <ul class="list-reset text-left w-1/2 lg:w-1/3 mt-4">
+        <ul class="w-1/2 mt-4 text-left list-reset lg:w-1/3">
           <li class="font-bold">Tulsa County</li>
           <li>Broken Arrow</li>
           <li>Collinsville</li>
@@ -804,18 +807,18 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
           <li>Sand Springs</li>
           <li>Tulsa</li>
         </ul>
-        <ul class="list-reset text-left w-1/2 lg:w-1/3 mt-4">
+        <ul class="w-1/2 mt-4 text-left list-reset lg:w-1/3">
           <li class="font-bold">Rogers County</li>
           <li>Catoosa</li>
           <li>Claremore</li>
           <li>Verdigris</li>
         </ul>
-        <ul class="list-reset text-left w-1/2 lg:w-1/3 mt-4">
+        <ul class="w-1/2 mt-4 text-left list-reset lg:w-1/3">
           <li class="font-bold">Osage County</li>
           <li>Skiatook</li>
         </ul>
         <button
-          class="block w-5/6 xl:w-1/2 bg-blue-500 hover:bg-blue-600 border-b-4 border-blue-700 text-white mx-auto text-center font-bold rounded shadow-lg py-4 px-8 mt-12 shadow-lg uppercase tracking-wide">
+          class="block w-5/6 px-8 py-4 mx-auto mt-12 font-bold tracking-wide text-center text-white uppercase bg-blue-500 border-b-4 border-blue-700 rounded shadow-lg xl:w-1/2 hover:bg-blue-600">
           Request an Estimate</button>
       </div>
 
@@ -825,38 +828,37 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
 </section>
 <!--Footer-->
 <div class="md:footer-top"></div>
-<div
-  class="absolute top-0 left-0 w-full w-3/4 rounded-lg shadow-lg bg-blue-900">
+<div class="absolute top-0 left-0 w-3/4 bg-blue-900 rounded-lg shadow">
 </div>
-<footer class="bg-gray-900 text-white pb-12">
-  <div class="container mx-auto px-6 py-0 text-2xl">
+<footer class="pb-12 text-white bg-gray-900">
+  <div class="container px-6 py-0 mx-auto text-2xl">
     <div class="w-full">
       <ul
-        class="list-reset pt-6 flex flex-col md:flex-row text-center md:text-left justify-between">
+        class="flex flex-col justify-between pt-6 text-center list-reset md:flex-row md:text-left">
         <li class="mt-2 mr-2">
           <a href="#services"
-            class="hover:underline text-white hover:text-red-600">Services</a>
+            class="text-white hover:underline hover:text-red-600">Services</a>
         </li>
         <li class="mt-2 mr-2">
           <a href="#why-us"
-            class="hover:underline text-white hover:text-red-600">Why
+            class="text-white hover:underline hover:text-red-600">Why
             Us?</a>
         </li>
         <li class="mt-2 mr-2">
           <a href="#estimate"
-            class="hover:underline text-white hover:text-red-600">Contact</a>
+            class="text-white hover:underline hover:text-red-600">Contact</a>
         </li>
         <li class="mt-2 mr-2">
-          <a class="hover:underline text-white font-bold hover:text-red-600"
+          <a class="font-bold text-white hover:underline hover:text-red-600"
             href="#">Free
             Quote</a>
         </li>
         <li class="mt-2 mr-2">
-          <a class="hover:underline text-white font-bold hover:text-red-600"
+          <a class="font-bold text-white hover:underline hover:text-red-600"
             href="#">Emergency</a>
         </li>
       </ul>
-      <ul class="list-reset mt-6 flex flex-wrap align-center justify-center">
+      <ul class="flex flex-wrap justify-center mt-6 list-reset align-center">
         <li class="mr-6">
           <a href="#"><svg xmlns="http://www.w3.org/2000/svg"
               class="fill-current hover:text-red-600" width="48" height="48"
@@ -874,19 +876,11 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
                 d="M12 0C8.74 0 8.333.015 7.053.072 5.775.132 4.905.333 4.14.63c-.789.306-1.459.717-2.126 1.384S.935 3.35.63 4.14C.333 4.905.131 5.775.072 7.053.012 8.333 0 8.74 0 12s.015 3.667.072 4.947c.06 1.277.261 2.148.558 2.913a5.885 5.885 0 001.384 2.126A5.868 5.868 0 004.14 23.37c.766.296 1.636.499 2.913.558C8.333 23.988 8.74 24 12 24s3.667-.015 4.947-.072c1.277-.06 2.148-.262 2.913-.558a5.898 5.898 0 002.126-1.384 5.86 5.86 0 001.384-2.126c.296-.765.499-1.636.558-2.913.06-1.28.072-1.687.072-4.947s-.015-3.667-.072-4.947c-.06-1.277-.262-2.149-.558-2.913a5.89 5.89 0 00-1.384-2.126A5.847 5.847 0 0019.86.63c-.765-.297-1.636-.499-2.913-.558C15.667.012 15.26 0 12 0zm0 2.16c3.203 0 3.585.016 4.85.071 1.17.055 1.805.249 2.227.415.562.217.96.477 1.382.896.419.42.679.819.896 1.381.164.422.36 1.057.413 2.227.057 1.266.07 1.646.07 4.85s-.015 3.585-.074 4.85c-.061 1.17-.256 1.805-.421 2.227a3.81 3.81 0 01-.899 1.382 3.744 3.744 0 01-1.38.896c-.42.164-1.065.36-2.235.413-1.274.057-1.649.07-4.859.07-3.211 0-3.586-.015-4.859-.074-1.171-.061-1.816-.256-2.236-.421a3.716 3.716 0 01-1.379-.899 3.644 3.644 0 01-.9-1.38c-.165-.42-.359-1.065-.42-2.235-.045-1.26-.061-1.649-.061-4.844 0-3.196.016-3.586.061-4.861.061-1.17.255-1.814.42-2.234.21-.57.479-.96.9-1.381.419-.419.81-.689 1.379-.898.42-.166 1.051-.361 2.221-.421 1.275-.045 1.65-.06 4.859-.06l.045.03zm0 3.678a6.162 6.162 0 100 12.324 6.162 6.162 0 100-12.324zM12 16c-2.21 0-4-1.79-4-4s1.79-4 4-4 4 1.79 4 4-1.79 4-4 4zm7.846-10.405a1.441 1.441 0 01-2.88 0 1.44 1.44 0 012.88 0z" />
             </svg></a>
         </li>
-        <!--<li>
-          <a href="#"><svg xmlns="http://www.w3.org/2000/svg" width="64"
-              height="64" class="fill-current hover:text-red-600"
-              viewBox="0 0 24 24">
-              <path
-                d="M19.615 3.184c-3.604-.246-11.631-.245-15.23 0-3.897.266-4.356 2.62-4.385 8.816.029 6.185.484 8.549 4.385 8.816 3.6.245 11.626.246 15.23 0 3.897-.266 4.356-2.62 4.385-8.816-.029-6.185-.484-8.549-4.385-8.816zm-10.615 12.816v-8l8 3.993-8 4.007z" />
-            </svg></a>
-        </li>-->
       </ul>
     </div>
   </div>
   <a title="Back to top" href="#nav"
-    class="scrollTop invisible bg-gray-700 hover:bg-gray-900 text-white rounded cursor-pointer fixed bottom-0 right-0 p-4 mr-4 mb-4 opacity-75 md:mr-12 md:mb-12">
+    class="fixed bottom-0 right-0 invisible p-4 mb-4 mr-4 text-white bg-gray-700 rounded opacity-75 cursor-pointer scrollTop hover:bg-gray-900 md:mr-12 md:mb-12">
     <svg xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
       class="fill-current" viewBox="0 0 448 512" width="32" height="32">
       <path fill="currentColor"
@@ -895,7 +889,8 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
   </a>
 </footer>
 <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+  href="stylesheets/animate.min.css">
+<script src="javascripts/aos.js"></script>
 <script>
   // Mobile menu
   // const x = document.getElementById('menuButton');
@@ -906,10 +901,10 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
   /*  Scroll to Top button  */
   function debounce(func, wait = 10, immediate = true) {
     let timeout;
-    return function () {
+    return function() {
       const context = this;
       const args = arguments;
-      const later = function () {
+      const later = function() {
         timeout = null;
         if (!immediate) func.apply(context, args);
       };
@@ -940,8 +935,7 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
   function scrollAnchors(e, respond = null) {
     const distanceToTop = el => Math.floor(el.getBoundingClientRect().top);
     e.preventDefault();
-    const targetID = respond ? respond.getAttribute('href') : this.getAttribute(
-      'href');
+    const targetID = respond ? respond.getAttribute('href') : this.getAttribute('href');
     const targetAnchor = document.querySelector(targetID);
     if (!targetAnchor) return;
     const originalTop = distanceToTop(targetAnchor);
@@ -950,9 +944,8 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
       left: 0,
       behavior: 'smooth',
     });
-    const checkIfDone = setInterval(function () {
-      const atBottom = window.innerHeight + window.pageYOffset >= document
-        .body.offsetHeight - 2;
+    const checkIfDone = setInterval(function() {
+      const atBottom = window.innerHeight + window.pageYOffset >= document.body.offsetHeight - 2;
       if (distanceToTop(targetAnchor) === 0 || atBottom) {
         targetAnchor.tabIndex = '-1';
         targetAnchor.focus();
@@ -969,9 +962,19 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
 
   // window.addEventListener('scroll', checkPosition);
   window.addEventListener('scroll', debounce(checkPosition));
-  (function () {
+  (function() {
     scrollTo();
   })();
-
+</script>
+<script>
+  // Initiliaze animation on scroll
+  AOS.init({
+    easing: 'ease-out-back',
+    duration: 800,
+    delay: 300,
+    once: false,
+    disable: 'mobile',
+  });
 </script>
 </body>
+</html>

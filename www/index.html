@@ -1,18 +1,15 @@
 <!DOCTYPE html>
-<div>
-
+<html class="antialiased bg-white" lang="en">
   <head>
     <title>Atkins Tree Care | Proudly serving the Tulsa, Oklahoma area</title>
     <meta charset="utf-8">
-    <meta name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="preload" href="fonts/400-regular.woff2" as="font"
-      type="font/woff2" crossorigin="">
-    <link rel="preload" href="fonts/600-bold.woff2" as="font" type="font/woff2"
-      crossorigin="">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <link rel="preload" href="fonts/400-regular.woff2" as="font" type="font/woff2">
+    <link rel="preload" href="fonts/600-bold.woff2" as="font" type="font/woff2">
 
     <link rel="stylesheet" type="text/css" href="stylesheets/tailwind.css">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link href="stylesheets/aos.css" rel="stylesheet">
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <style>
       @font-face {
         font-family: ATC;
@@ -53,47 +50,36 @@
 
     </style>
     <script
-      src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v1.9.3/dist/alpine.js"
+      src="javascripts/alpine.js"
       defer></script>
   </head>
 
-  <body class="antialiased text-gray-700 bg-white">
+  <body>
     <a class="sr-only" href="#hero">Skip to main content</a>
     <!--Nav-->
     <nav id="nav" style="min-width:385px;"
-      class="top-0 z-10 flex flex-wrap items-center justify-between w-full px-6 py-2 shadow-lg"
+      class="top-0 z-10 flex flex-nowrap items-top justify-between px-4 xl:px-6 py-2 shadow"
       x-data="{ menuOpen: false }" @keydown.escape="menuOpen = false"
-      :class="{ 'bg-gray-200' : menuOpen , 'bg-white' : !menuOpen}">
-
-      <div class="flex items-center flex-shrink-0 mr-6 text-white">
+      :class="{ 'bg-gray-200' : menuOpen , 'bg-white' : !menuOpen }">
+      <div class="xl:flex xl:container xl:mx-auto w-100">
+      <div class="flex items-top xl:items-center flex-shrink-0 mx-6">
         <a class="text-2xl lg:text-4xl" href="/">
-          <img class="hidden mr-4 shake md:block" src="images/atkins-logo.svg"
-            width="100" height="100">
+          <img class="hidden mr-4 w-14 h-14 shake md:block" src="images/atkins-logo.svg"
+            width="56" height="56">
         </a>
-        <a class="items-center text-2xl text-gray-900 hover:text-gray-800 lg:text-4xl"
-          style="line-height:1.5rem;" href="#">
+        <a class="text-gray-900 hover:text-gray-800 leading-4" href="/" >
           <span
-            class="self-center font-bold xs:text-xl sm:text-2xl md:text-4xl">Atkins
-            Tree Care<br><span
-              class="text-sm text-blue-500 md:text-base xs:tracking-tighter sm:tracking-tight">Proudly
-              Serving the Greater Tulsa area</span></span>
+            class="block font-bold text-2xl md:text-4xl">Atkins
+            Tree Care<br>
+          <span
+            class="block text-sm text-blue-600 md:text-base xs:tracking-tighter sm:tracking-tight">Proudly
+              Serving the Greater Tulsa area</span>
+            </span>
         </a>
       </div>
-
-      <button @click="menuOpen = !menuOpen" type="button"
-        class="block px-2 text-gray-900 xl:hidden hover:text-gray-600 focus:outline-none focus:text-white"
-        :class="{ 'transition transform-180': menuOpen }">
-        <svg class="w-12 h-12 fill-current" xmlns="http://www.w3.org/2000/svg"
-          viewBox="0 0 24 24" width="1em" height="auto">
-          <path x-show="menuOpen" fill-rule="evenodd" clip-rule="evenodd"
-            d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
-          <path x-show="!menuOpen" fill-rule="evenodd"
-            d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
-        </svg>
-      </button>
-
-      <div class="flex-grow w-full xl:flex xl:items-center xl:w-auto"
-        :class="{ 'block shadow-3xl': menuOpen, 'hidden': !menuOpen }"
+      
+      <div class="w-full xl:flex xl:flex-grow xl:items-center xl:w-auto mx-2"
+        :class="{ 'block': menuOpen, 'hidden': !menuOpen }"
         @click.away="menuOpen = false" x-show="true"
         x-transition:enter="ease-out duration-200"
         x-transition:enter-start="opacity-0 transform"
@@ -104,36 +90,48 @@
 
         <ul
           class="items-center justify-end flex-1 pt-6 xl:pt-0 list-reset xl:flex">
-          <li class="mr-3 rounded hover:bg-gray-400">
-            <a class="block px-4 py-2 text-xl text-gray-800 hover:text-gray-900"
+          <li class="mr-3 rounded border-transparent border-b-4 hover:bg-gray-100 hover:border-gray-300">
+            <a class="block px-4 py-2 xl:font-bold text-xl text-gray-800 hover:text-gray-900 xl:rounded xl:px-6"
               href="#services" @click="menuOpen = false">Services</a>
           </li>
-          <li class="mr-3 rounded hover:bg-gray-400">
-            <a class="block px-4 py-2 text-xl text-gray-800 hover:text-gray-900"
+          <li class="mr-3 rounded border-transparent border-b-4 hover:bg-gray-100 hover:border-gray-300">
+            <a class="block px-4 py-2 xl:font-bold text-xl text-gray-800 hover:text-gray-900 xl:rounded xl:px-6"
               href="#why-us" @click="menuOpen = false">Why Us?</a>
           </li>
-          <li class="mr-3 rounded hover:bg-gray-400">
-            <a class="block px-4 py-2 text-xl text-gray-800 hover:text-gray-900"
+          <li class="mr-3 rounded border-transparent border-b-4 hover:bg-gray-100 hover:border-gray-300">
+            <a class="block px-4 py-2 xl:font-bold text-xl text-gray-800 hover:text-gray-900 xl:rounded xl:px-6"
               href="#estimate" @click="menuOpen = false">Contact</a>
           </li>
           <li class="mr-3 rounded hover:bg-blue-200">
-            <a class="block px-4 py-2 text-xl font-bold text-blue-600 bg-transparent xl:bg-blue-500 xl:hover:bg-blue-600 xl:border-b-4 xl:border-blue-700 xl:text-white xl:rounded xl:py-4 xl:px-6 xl:shadow-lg xl:uppercase xl:tracking-wide"
+            <a class="block px-4 py-2 text-xl font-bold text-blue-600 bg-transparent xl:bg-blue-500 xl:hover:bg-blue-600 xl:border-b-4 xl:border-blue-700 xl:text-white xl:rounded xl:px-6"
               href="#estimate" @click="menuOpen = false">Free Quote</a>
           </li>
           <li class="mr-3 rounded hover:bg-red-200">
-            <a class="block px-4 py-2 text-xl font-bold text-red-600 bg-transparent xl:bg-red-500 xl:hover:bg-red-600 xl:border-b-4 xl:border-red-700 xl:text-white xl:rounded xl:py-4 xl:px-6 xl:shadow-lg xl:uppercase xl:tracking-wide"
+            <a class="block px-4 py-2 text-xl font-bold text-red-600 bg-transparent xl:bg-red-500 xl:hover:bg-red-600 xl:border-b-4 xl:border-red-700 xl:text-white xl:rounded xl:px-6"
               href="#emergency" @click="menuOpen = false">Emergency</a></a>
           </li>
         </ul>
 
       </div>
-
+    </div>
+      <button @click="menuOpen = !menuOpen" type="button" id="menuButton"
+      class="flex-none w-16 h-16 px-2 text-gray-900 xl:hidden hover:text-gray-600 focus:outline-none"
+      :class="{ 'transition transform-180': menuOpen }">
+      <svg class="w-12 h-12 fill-current" xmlns="http://www.w3.org/2000/svg"
+        viewBox="0 0 24 24" width="1em" height="1em">
+        <path x-show="menuOpen" fill-rule="evenodd" clip-rule="evenodd"
+          d="M18.278 16.864a1 1 0 0 1-1.414 1.414l-4.829-4.828-4.828 4.828a1 1 0 0 1-1.414-1.414l4.828-4.829-4.828-4.828a1 1 0 0 1 1.414-1.414l4.829 4.828 4.828-4.828a1 1 0 1 1 1.414 1.414l-4.828 4.829 4.828 4.828z" />
+        <path x-show="!menuOpen" fill-rule="evenodd"
+          d="M4 5h16a1 1 0 0 1 0 2H4a1 1 0 1 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2zm0 6h16a1 1 0 0 1 0 2H4a1 1 0 0 1 0-2z" />
+      </svg>
+    </button>
+    
     </nav>
     <!-- hero -->
     {{#section hero label="1. Hero" priority=1 sortable=true}}
     <section id="hero" class="container px-6 mx-auto my-12">
       <div
-        class="relative items-center block mx-auto my-6 bg-gray-100 rounded-lg shadow-xl md:flex max-w-100 sm:mb-4 sm:mt-16"
+        class="relative items-center block mx-auto my-6 bg-gray-100 rounded-lg shadow md:flex max-w-100 sm:mb-4 sm:mt-16"
         style="min-height: 18rem;">
         <div
           class="relative w-full h-full overflow-hidden rounded-t-lg md:w-2/5 md:rounded-t-none md:rounded-l-lg"
@@ -154,7 +152,7 @@
           class="flex items-center w-full h-full bg-gray-100 rounded-lg md:w-3/5">
           <div class="px-6 py-4 md:pr-24 md:pl-16 md:py-12">
             <p class="text-gray-600">
-              Winter is the best time to trim or remove trees. We can clearly
+              Winter is a great time to trim or remove trees. We can clearly
               see the structure of the tree, allowing us to provide better
               recommendations to you. Trimmed areas recover quickly in the
               Spring.
@@ -162,9 +160,9 @@
                 {{Hero_Tagline type=html editor=wysiwyg}}
               -->
             </p>
-            <a class="flex items-baseline mt-3 text-red-600 hover:text-indigo-900 focus:text-indigo-900"
+            <a class="flex items-baseline mt-3 text-red-600 hover:text-red-900 focus:text-red-900"
               href="">
-              <span class="text-xl">Learn more about tree trimming
+              <span class="text-xl font-bold">Learn more about tree trimming
                 <!---
                   {{Hero_Link type=html editor=wysiwyg}}
                 -->
@@ -173,7 +171,7 @@
           </div>
           <svg
             class="absolute inset-y-0 hidden w-24 h-full -ml-12 text-gray-100 fill-current md:block"
-            viewBox="0 0 100 100" preserveAspectRatio="none">
+            viewBox="0 0 100 100" preserveAspectRatio="none" height="300px" width="300px">
             <polygon points="50,0 100,0 50,100 0,100" />
           </svg>
         </div>
@@ -192,7 +190,7 @@
         <a href="#service-area"
           class="px-2 opacity-50 hover:opacity-100 focus:opacity-100">CATOOSA</a>
       </div>
-</div>
+    </section>
 {{/section}}
 {{#section service label="2. Services" priority=2}}
 <!-- Services -->
@@ -215,7 +213,7 @@
     <div class="flex flex-row flex-wrap mb-20">
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <!--
             <picture>
             <source srcset="{{image_1 type=image tag=false}}" />
@@ -240,7 +238,7 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="w-full"
             srcset="images/stump@1x.jpg 1x, images/stump@2x.jpg 2x"
             src="images/stump@1x.jpg" alt="Tree removal in Tulsa, Oklahoma">
@@ -256,7 +254,7 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="w-full"
             srcset="images/tree-trimming@1x.jpg 1x, images/tree-trimming@2x.jpg 2x"
             src="images/tree-trimming@1x.jpg"
@@ -274,7 +272,7 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="object-fill"
             srcset="images/grinding@1x.jpg 1x, images/grinding@2x.jpg 2x"
             src="images/grinding@1x.jpg"
@@ -292,7 +290,7 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="object-contain"
             srcset="images/emergency@1x.jpg 1x, images/emergency@2x.jpg 2x"
             src="images/emergency@1x.jpg"
@@ -310,7 +308,7 @@
       </div>
       <div class="flex w-full sm:w-1/2 md:w-1/3">
         <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow-lg">
+          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow">
           <img class="object-contain"
             srcset="images/firewood@1x.jpg 1x, images/firewood@2x.jpg 2x"
             src="images/firewood@1x.jpg"
@@ -844,7 +842,7 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
 {{/section}}
 <!--Footer-->
 <div class="md:footer-top"></div>
-<div class="absolute top-0 left-0 w-3/4 bg-blue-900 rounded-lg shadow-lg">
+<div class="absolute top-0 left-0 w-3/4 bg-blue-900 rounded-lg shadow">
 </div>
 <footer class="pb-12 text-white bg-gray-900">
   <div class="container px-6 py-0 mx-auto text-2xl">
@@ -905,16 +903,10 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
   </a>
 </footer>
 <link rel="stylesheet"
-  href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
-<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  href="stylesheets/animate.min.css">
+<script src="javascripts/aos.js"></script>
 <script>
-  // Mobile menu
-  // const x = document.getElementById('menuButton');
-  // x.addEventListener('click', function () {
-  //   document.getElementById('nav').classList.toggle('hidden');
-  // });
-
-  /*  Scroll to Top button  */
+  //  Scroll to Top button
   function debounce(func, wait = 10, immediate = true) {
     let timeout;
     return function() {
@@ -976,14 +968,12 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
     links.forEach(each => (each.onclick = scrollAnchors));
   }
 
-  // window.addEventListener('scroll', checkPosition);
   window.addEventListener('scroll', debounce(checkPosition));
   (function() {
     scrollTo();
   })();
-</script>
-<script>
-  // Initiliaze animation on scroll
+
+  // Initiliaze animation
   AOS.init({
     easing: 'ease-out-back',
     duration: 800,
@@ -993,3 +983,4 @@ linear-gradient(230deg, #c53030 0%, #9b2c2c 100%);
   });
 </script>
 </body>
+</html>
