@@ -65,6 +65,9 @@
       .scrollTop {
         scroll-behavior: smooth;
       }
+      input:not(:placeholder-shown):invalid {
+        background-color: salmon !important;
+      }
     </style>
     <script src="javascripts/alpine.js" defer></script>
   </head>
@@ -125,7 +128,7 @@
           >
             <a
               class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
-              href="#services"
+              href="index.html#services"
               @click="menuOpen = false"
               >Services</a
             >
@@ -135,7 +138,7 @@
           >
             <a
               class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
-              href="#why-us"
+              href="index.html#why-us"
               @click="menuOpen = false"
               >Why Us?</a
             >
@@ -145,7 +148,7 @@
           >
             <a
               class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
-              href="#estimate"
+              href="contact.html"
               @click="menuOpen = false"
               >Contact</a
             >
@@ -161,7 +164,7 @@
           <li class="rounded xl:mr-3 hover:bg-red-200">
             <a
               class="block py-2 text-xl font-bold text-red-600 bg-transparent xl:px-4 xl:bg-red-500 xl:hover:bg-red-600 xl:border-b-4 xl:border-red-700 xl:text-white xl:rounded xl:px-6"
-              href="#estimate"
+              href="emergency.html"
               @click="menuOpen = false"
               >Emergency</a
             >
@@ -882,7 +885,7 @@ you. Trimmed areas recover quickly in the Spring.
               Name (required)
             </label>
             <input
-              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-name"
               type="text"
               placeholder="Your Name"
@@ -898,7 +901,7 @@ you. Trimmed areas recover quickly in the Spring.
               Phone Number (required)
             </label>
             <input
-              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-phone-number"
               type="tel"
               placeholder="Your phone number"
@@ -914,7 +917,7 @@ you. Trimmed areas recover quickly in the Spring.
               Email
             </label>
             <input
-              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-email"
               type="email"
               placeholder="Your Email Address"
@@ -931,7 +934,7 @@ you. Trimmed areas recover quickly in the Spring.
               Service Address
             </label>
             <input
-              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-service-address"
               type="text"
               placeholder="Street"
@@ -946,7 +949,7 @@ you. Trimmed areas recover quickly in the Spring.
               City
             </label>
             <input
-              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-city"
               type="text"
               placeholder="City"
@@ -961,7 +964,7 @@ you. Trimmed areas recover quickly in the Spring.
               Zipcode (required)
             </label>
             <input
-              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-zip"
               type="text"
               inputmode="tel"
@@ -1241,13 +1244,13 @@ you. Trimmed areas recover quickly in the Spring.
             <svg
             xmlns="http://www.w3.org/2000/svg"
             class="fill-current hover:text-red-600"
-            version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 200 200" width="48" height="48">
+            viewBox="0 0 200 200" width="48" height="48">
             <g transform="matrix(8.333333333333334,0,0,8.333333333333334,0,0)">
-              <path d="M3.57 3.58L11.2 11.8 11.77 0.76 3.57 3.58z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-              <path d="M17.61 6.97L13.63 13.03 20.65 12.09 17.61 6.97z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-              <path d="M20.27 17.88L13.43 15.48 16.03 22.07 20.27 17.88z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-              <path d="M11.92 23.24L11.33 16.01 6.37 21.07 11.92 23.24z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-              <path d="M3.63 17.79L9.98 14.31 3.35 11.84 3.63 17.79z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M3.57 3.58L11.2 11.8 11.77 0.76 3.57 3.58z" fill="none" class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M17.61 6.97L13.63 13.03 20.65 12.09 17.61 6.97z" fill="none"  class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M20.27 17.88L13.43 15.48 16.03 22.07 20.27 17.88z" fill="none" class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M11.92 23.24L11.33 16.01 6.37 21.07 11.92 23.24z" fill="none" class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M3.63 17.79L9.98 14.31 3.35 11.84 3.63 17.79z" fill="none" class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
             </g>
           </svg>
             </a>

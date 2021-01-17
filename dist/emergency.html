@@ -65,6 +65,9 @@
       .scrollTop {
         scroll-behavior: smooth;
       }
+      input:not(:placeholder-shown):invalid {
+        background-color: salmon !important;
+      }
     </style>
     <script src="javascripts/alpine.js" defer></script>
   </head>
@@ -125,7 +128,7 @@
           >
             <a
               class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
-              href="#services"
+              href="index.html#services"
               @click="menuOpen = false"
               >Services</a
             >
@@ -135,7 +138,7 @@
           >
             <a
               class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
-              href="#why-us"
+              href="index.html#why-us"
               @click="menuOpen = false"
               >Why Us?</a
             >
@@ -145,7 +148,7 @@
           >
             <a
               class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
-              href="#estimate"
+              href="contact.html"
               @click="menuOpen = false"
               >Contact</a
             >
@@ -161,7 +164,7 @@
           <li class="rounded xl:mr-3 hover:bg-red-200">
             <a
               class="block py-2 text-xl font-bold text-red-600 bg-transparent xl:px-4 xl:bg-red-500 xl:hover:bg-red-600 xl:border-b-4 xl:border-red-700 xl:text-white xl:rounded xl:px-6"
-              href="#estimate"
+              href="emergency.html"
               @click="menuOpen = false"
               >Emergency</a
             >
@@ -201,310 +204,99 @@
 
 
 <main role="main">
-  <!-- hero -->
-<section id="hero" class="container px-6 mx-auto my-12">
-  <div
-    class="relative items-center block max-w-full mx-auto my-6 bg-gray-100 rounded-lg shadow md:flex sm:mb-4 sm:mt-16"
-    style="min-height: 18rem"
-  >
-    <div
-      class="relative w-full h-full overflow-hidden rounded-t-lg md:w-2/5 md:rounded-t-none md:rounded-l-lg"
-      style="min-height: 19rem"
-    >
-      <img
-        class="absolute inset-0 object-cover object-center w-full h-full"
-        srcset="images/slider@1x.jpg 1x, images/slider@2x.jpg 2x"
-        src="images/slider@1x.jpg"
-        alt="Winter trimming can be an important component of tree maintenance"
-      />
-      <div class="absolute inset-0 w-full h-full bg-red-900 opacity-50"></div>
-      <div
-        class="absolute inset-0 flex items-center justify-center w-full h-full"
-      >
-        <span class="text-3xl font-bold leading-normal text-white"
-          >WINTER<br />MAINTENANCE</span
-        >
-      </div>
-    </div>
-    <div
-      class="flex items-center w-full h-full bg-gray-100 rounded-lg md:w-3/5"
-    >
-      <div class="px-6 py-4 md:pr-24 md:pl-16 md:py-12">
-        <p class="text-gray-600">
-          Winter is a great time to trim or remove trees. We can clearly see the
-structure of the tree, allowing us to provide better recommendations to
-you. Trimmed areas recover quickly in the Spring.
-        </p>
-        <a
-          class="flex items-baseline mt-3 text-red-600 hover:text-red-900 focus:text-red-900"
-          href=""
-        >
-          <span class="text-xl font-bold">Learn more about tree trimming </span>
-          <span class="ml-1 text-xs">&#x279c;</span></a
-        >
-      </div>
-      <svg
-        class="absolute inset-y-0 hidden w-24 h-full -ml-12 text-gray-100 fill-current md:block"
-        viewBox="0 0 100 100"
-        preserveAspectRatio="none"
-        height="300px"
-        width="300px"
-      >
-        <polygon points="50,0 100,0 50,100 0,100" />
-      </svg>
-    </div>
-  </div>
-  <div
-    class="items-center justify-between hidden max-w-6xl mx-auto sm:flex md:mt-2 lg:mt-4"
-  >
-    <a
-      href="#service-area"
-      class="px-2 text-black text-opacity-70 hover:text-opacity-100 focus:text-opacity-100"
-      >TULSA</a
-    >
-    <a
-      href="#service-area"
-      class="px-2 text-black text-opacity-70 hover:text-opacity-100 focus:text-opacity-100"
-      >OWASSO</a
-    >
-    <a
-      href="#service-area"
-      class="px-2 text-black text-opacity-70 hover:text-opacity-100 focus:text-opacity-100"
-      >BROKEN ARROW</a
-    >
-    <a
-      href="#service-area"
-      class="px-2 text-black text-opacity-70 hover:text-opacity-100 focus:text-opacity-100"
-      >CLAREMORE</a
-    >
-    <a
-      href="#service-area"
-      class="px-2 text-black text-opacity-70 hover:text-opacity-100 focus:text-opacity-100"
-      >CATOOSA</a
-    >
-  </div>
-</section>
-<!-- Services -->
-<div class="md:section--trees"></div>
-<section id="services" class="bg-gray-100">
-  <div class="container px-6 pb-6 mx-auto">
+<!-- Emergency Form -->
+<div class=" md:section--trees"></div>
+<section id="services" class="pb-4 bg-gray-100">
+  <div style="border-image: repeating-linear-gradient(
+    -55deg,
+    #0e131f,
+    #0e131f 20px,
+    #ff0b2d 20px,
+    #ff0b2d 40px
+  ) 10;background-origin: border-box;
+  background-clip: content-box, border-box;" class="container p-6 px-6 mx-auto bg-white rounded border-red-500 shadow border-8">
     <h1
-      class="pt-12 mb-2 text-4xl font-bold text-center text-gray-800 md:hidden"
-    >
-      Services
+      class="pt-12 mb-2 text-4xl font-bold text-center text-gray-800 md:hidden">
+      Emergency Assistance
     </h1>
     <h1
-      class="hidden mb-2 text-3xl font-bold text-center text-gray-800 bg-gray-100 slideInRight animated md:block"
-    >
-      We provide complete tree care services to residential and commercial
-      customers
+      class="hidden mb-2 text-3xl font-bold text-center text-gray-800 slideInRight animated md:block">
+      Emergency Assistance
     </h1>
     <div class="w-1/6 h-2 mx-auto mb-8 bg-red-500"></div>
     <h2 class="mb-8 text-xl text-center">
-      We offer a full range of tree care services to home owners, property
-      managers, and commercial developers
+      We offer emergency assistance service around the Greater Tulsa area. Call
+      us at 918-691-4047 for the quickest response, or leave a message using the
+      form below and we will call you back as soon as possible.
     </h2>
-    <div class="flex flex-row flex-wrap mb-20">
-      <div class="flex w-full sm:w-1/2 md:w-1/3">
-        <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow"
-        >
-          <img
-            class="w-full"
-            srcset="images/tree-care@1x.jpg 1x, images/tree-care@2x.jpg 2x"
-            src="images/tree-care@1x.jpg"
-            alt="Tree removal in Tulsa, Oklahoma"
-          />
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">Complete Tree Care</div>
-            <p class="pb-4 text-base text-gray-700">
-              We offer long-term health solutions for your trees, providing
-              peace of mind for the safety, aesthetics, and value of your
-              property.
-            </p>
+    <form action="https://formspree.io/f/mdopyozg" method="POST">
+      <input type="text" name="_gotcha" style="display: none" />
+      <input type="hidden" name="_next" value="localhost:3000/thanks.html" />
+      <div class="flex flex-col px-8 pt-6 pb-8 my-2 mb-4 text-left">
+        <div class="-mx-3 md:flex">
+          <div class="px-3 mb-6 md:w-1/3">
+            <label
+              class="block mb-2 text-xs font-bold tracking-wide text-gray-500 uppercase"
+              for="grid-name">
+              Name (required)
+            </label>
+            <input
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 bg-opacity-25 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-400"
+              id="grid-name" type="text" placeholder="Your Name" name="name"
+              required />
+          </div>
+          <div class="px-3 mb-6 md:w-1/3">
+            <label
+              class="block mb-2 text-xs font-bold tracking-wide text-gray-500 uppercase"
+              for="grid-phone-number">
+              Phone Number (required)
+            </label>
+            <input
+              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 bg-opacity-25 border border-gray-300 rounded appearance-none bg-gra-100 focus:outline-none focus:bg-white focus:border-gray-400"
+              id="grid-phone-number" type="tel" placeholder="Your phone number"
+              name="phone" required />
+          </div>
+          <div class="px-3 mb-6 md:w-1/3">
+            <label
+              class="block mb-2 text-xs font-bold tracking-wide text-gray-500 uppercase"
+              for="grid-email">
+              Email
+            </label>
+            <input
+              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 bg-opacity-25 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-400"
+              id="grid-email" type="email" placeholder="Your Email Address"
+              name="_replyto" />
           </div>
         </div>
-      </div>
-      <div class="flex w-full sm:w-1/2 md:w-1/3">
-        <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow"
-        >
-          <img
-            class="w-full"
-            srcset="images/stump@1x.jpg 1x, images/stump@2x.jpg 2x"
-            src="images/stump@1x.jpg"
-            alt="Tree removal in Tulsa, Oklahoma"
-          />
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">Tree Removal</div>
-            <p class="pb-4 text-base text-gray-700">
-              Tree removal can be complex and dangerous and should not be
-              attempted alone. Our experienced crews provide safe and efficient
-              tree removal.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="flex w-full sm:w-1/2 md:w-1/3">
-        <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow"
-        >
-          <img
-            class="w-full"
-            srcset="
-              images/tree-trimming@1x.jpg 1x,
-              images/tree-trimming@2x.jpg 2x
-            "
-            src="images/tree-trimming@1x.jpg"
-            alt="Tree trimming in Tulsa, Oklahoma"
-          />
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">Tree Trimming</div>
-            <p class="pb-4 text-base text-gray-700">
-              Most trees require regular trimming. We offer seasonal and
-              on-demand trimming services that help avoid larger problems down
-              the road.
-            </p>
-          </div>
-        </div>
-      </div>
-      <div class="flex w-full sm:w-1/2 md:w-1/3">
-        <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow"
-        >
-          <img
-            class="object-fill"
-            srcset="images/grinding@1x.jpg 1x, images/grinding@2x.jpg 2x"
-            src="images/grinding@1x.jpg"
-            alt="Stump grinding and removal in Tulsa, Oklahoma"
-          />
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">
-              Stump Grinding &amp; Removal
+
+        <div class="flex flex-wrap justify-between -mx-3">
+          <div class="w-full px-3 mb-6 md:w-2/3 md:mb-0">
+            <label
+              class="block mb-2 text-xs font-bold tracking-wide text-gray-500 uppercase"
+              for="grid-message">
+              Message (optional)
+            </label>
+            <div class="relative">
+              <textarea
+                class="block w-full h-32 px-4 py-3 pr-8 leading-tight text-gray-900 bg-gray-100 bg-opacity-25 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-400"
+                id="grid-message" name="message"></textarea>
             </div>
-            <p class="text-base text-gray-700">
-              Tree stumps can be unsightly and dangerous. We can grind or remove
-              stumps to restore your landscape.
-            </p>
+          </div>
+          <div class="self-end w-full px-3 md:w-1/3 md:mt-6">
+            <button type="submit"
+              class="inline-flex justify-center w-full px-6 py-4 font-bold tracking-wide text-white uppercase bg-blue-500 border-b-4 border-blue-700 rounded shadow-lg appearance-none hover:bg-blue-600 hover:shadow-md">
+              <span class="mr-2 whitespace-nowrap">Submit Request</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="" width="24"
+                height="24" viewBox="0 0 24 24">
+                <path fill="currentcolor"
+                  d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+              </svg>
+            </button>
           </div>
         </div>
       </div>
-      <div class="flex w-full sm:w-1/2 md:w-1/3">
-        <a href="emergency.html"
-          ><span class="sr-only">Emergency Assistance</span>
-          <div
-            class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow"
-          >
-            <img
-              class="object-contain"
-              srcset="images/emergency@1x.jpg 1x, images/emergency@2x.jpg 2x"
-              src="images/emergency@1x.jpg"
-              alt="Emergency Tree Assistance in Tulsa, Oklahoma"
-            />
-            <div class="px-6 py-4">
-              <div class="mb-2 text-xl font-bold">
-                Emergency Assistance
-              </div>
-              <p class="text-base text-gray-700">
-                We understand the urgency when disaster strikes. We provide
-                <a class="underline" href="emergency.html"
-                  >24/7 emergency tree services</a
-                >
-                for both commercial and residential customers.
-              </p>
-            </div>
-          </div></a
-        >
-      </div>
-      <div class="flex w-full sm:w-1/2 md:w-1/3">
-        <div
-          class="flex-1 mx-2 mt-4 mb-6 overflow-hidden bg-white rounded shadow"
-        >
-          <img
-            class="object-contain"
-            srcset="images/firewood@1x.jpg 1x, images/firewood@2x.jpg 2x"
-            src="images/firewood@1x.jpg"
-            alt="Firewood and mulch in Tulsa, Oklahoma"
-          />
-          <div class="px-6 py-4">
-            <div class="mb-2 text-xl font-bold">Firewood &amp; Mulch</div>
-            <p class="text-base text-gray-700">
-              We offer local delivery and pickup of carefully chosen hardwood
-              firewood and wood chips for mulching. Call our office at
-              918-691-4047 for available stock.
-            </p>
-          </div>
-        </div>
-      </div>
-    </div>
+    </form>
   </div>
-</section>
-<section id="why-us">
-  <div class="container px-6 mx-auto lg:mt-6 lg:py-20">
-    <div class="flex flex-wrap items-start mb-20">
-      <div
-        data-aos="fade-right"
-        class="flex self-start invisible w-full h-0 lg:h-auto lg:visible lg:w-1/2"
-      >
-        <img
-          class="m-0 align-middle rounded shadow-lg xl:transform-gpu "
-          srcset="images/left@1x.jpg 1x, images/left@2x.jpg 2x"
-          src="images/left@1x.jpg"
-          alt="Tree trimming in progress!"
-        />
-      </div>
-      <div class="w-full mb-20 lg:w-1/2 lg:pl-20" data-aos="fade-left">
-        <h2
-          class="mt-20 mb-2 text-3xl font-bold text-center text-gray-800 slideInRight animated lg:mt-0"
-        >
-          Why Choose Atkins Tree Care?
-        </h2>
-        <div class="w-1/6 h-2 mx-auto mb-8 bg-red-500"></div>
-        <p class="mb-4">
-          As a locally-owned company, Atkins Tree Care understands the
-          importance and value of trees in Green Country.
-        </p>
-        <p class="mb-8 font-bold">
-          We provide a full range of high-quality tree care services to protect
-          your investment and their surroundings. We are committed to ensuring
-          your trees are safe, healthy, and beautiful.
-        </p>
-        <div class="flex flex-wrap">
-          <div class="w-full mb-8 sm:w-1/2 sm:pr-4">
-            <h3 class="font-bold text-left">Accredited</h3>
-            <p class="text-left">
-              Our company and employees are fully licensed, bonded, and insured.
-              Ben Atkins is an ISA-certified arborist.
-            </p>
-          </div>
-          <div class="w-full mb-8 sm:w-1/2 sm:pl-4">
-            <h3 class="font-bold text-left">Experienced</h3>
-            <p class="text-left">
-              Atkins Tree Care has been serving this area for more than a decade
-            </p>
-          </div>
-          <div class="w-full mb-8 sm:w-1/2 sm:pr-4">
-            <h3 class="font-bold text-left">Satisfied Customers</h3>
-            <p class="text-left">
-              Our customer reviews tell the story of our excellent customer
-              service
-            </p>
-          </div>
-          <div class="w-full mb-8 sm:w-1/2 sm:pl-4">
-            <h3 class="font-bold text-left">Competitive rates</h3>
-            <p class="text-left">
-              We strive to keep our pricing competitive and fair
-            </p>
-          </div>
-          <a
-            class="w-5/6 px-8 py-4 mx-auto mt-12 font-bold tracking-wide text-center text-white uppercase bg-blue-500 border-b-4 border-blue-700 rounded shadow-lg xl:w-1/2 hover:bg-blue-600"
-            href="#estimate"
-          >
-            Get a Free Estimate
-          </a>
-        </div>
-      </div>
-    </div>
   </div>
 </section>
 <section id="reviews" class="bg-gray-100">
@@ -882,7 +674,7 @@ you. Trimmed areas recover quickly in the Spring.
               Name (required)
             </label>
             <input
-              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-name"
               type="text"
               placeholder="Your Name"
@@ -898,7 +690,7 @@ you. Trimmed areas recover quickly in the Spring.
               Phone Number (required)
             </label>
             <input
-              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-phone-number"
               type="tel"
               placeholder="Your phone number"
@@ -914,7 +706,7 @@ you. Trimmed areas recover quickly in the Spring.
               Email
             </label>
             <input
-              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-email"
               type="email"
               placeholder="Your Email Address"
@@ -931,7 +723,7 @@ you. Trimmed areas recover quickly in the Spring.
               Service Address
             </label>
             <input
-              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-service-address"
               type="text"
               placeholder="Street"
@@ -946,7 +738,7 @@ you. Trimmed areas recover quickly in the Spring.
               City
             </label>
             <input
-              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-city"
               type="text"
               placeholder="City"
@@ -961,7 +753,7 @@ you. Trimmed areas recover quickly in the Spring.
               Zipcode (required)
             </label>
             <input
-              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none"
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 border border-gray-100 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-500"
               id="grid-zip"
               type="text"
               inputmode="tel"
@@ -1241,13 +1033,13 @@ you. Trimmed areas recover quickly in the Spring.
             <svg
             xmlns="http://www.w3.org/2000/svg"
             class="fill-current hover:text-red-600"
-            version="1.1" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:svgjs="http://svgjs.com/svgjs" viewBox="0 0 200 200" width="48" height="48">
+            viewBox="0 0 200 200" width="48" height="48">
             <g transform="matrix(8.333333333333334,0,0,8.333333333333334,0,0)">
-              <path d="M3.57 3.58L11.2 11.8 11.77 0.76 3.57 3.58z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-              <path d="M17.61 6.97L13.63 13.03 20.65 12.09 17.61 6.97z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-              <path d="M20.27 17.88L13.43 15.48 16.03 22.07 20.27 17.88z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-              <path d="M11.92 23.24L11.33 16.01 6.37 21.07 11.92 23.24z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
-              <path d="M3.63 17.79L9.98 14.31 3.35 11.84 3.63 17.79z" fill="none" stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M3.57 3.58L11.2 11.8 11.77 0.76 3.57 3.58z" fill="none" class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M17.61 6.97L13.63 13.03 20.65 12.09 17.61 6.97z" fill="none"  class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M20.27 17.88L13.43 15.48 16.03 22.07 20.27 17.88z" fill="none" class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M11.92 23.24L11.33 16.01 6.37 21.07 11.92 23.24z" fill="none" class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
+              <path d="M3.63 17.79L9.98 14.31 3.35 11.84 3.63 17.79z" fill="none" class="fill-current hover:text-red-600" stroke="#FFFFFF" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"></path>
             </g>
           </svg>
             </a>

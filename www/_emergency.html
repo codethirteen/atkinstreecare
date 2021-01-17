@@ -1,0 +1,97 @@
+{{#section emergency label="6. Emergency" priority=2}}
+<!-- Emergency Form -->
+<div class=" md:section--trees"></div>
+<section id="services" class="pb-4 bg-gray-100">
+  <div style="border-image: repeating-linear-gradient(
+    -55deg,
+    #0e131f,
+    #0e131f 20px,
+    #ff0b2d 20px,
+    #ff0b2d 40px
+  ) 10;background-origin: border-box;
+  background-clip: content-box, border-box;" class="container p-6 px-6 mx-auto bg-white rounded border-red-500 shadow border-8">
+    <h1
+      class="pt-12 mb-2 text-4xl font-bold text-center text-gray-800 md:hidden">
+      Emergency Assistance
+    </h1>
+    <h1
+      class="hidden mb-2 text-3xl font-bold text-center text-gray-800 slideInRight animated md:block">
+      Emergency Assistance
+    </h1>
+    <div class="w-1/6 h-2 mx-auto mb-8 bg-red-500"></div>
+    <h2 class="mb-8 text-xl text-center">
+      We offer emergency assistance service around the Greater Tulsa area. Call
+      us at 918-691-4047 for the quickest response, or leave a message using the
+      form below and we will call you back as soon as possible.
+    </h2>
+    <form action="https://formspree.io/f/mdopyozg" method="POST">
+      <input type="text" name="_gotcha" style="display: none" />
+      <input type="hidden" name="_next" value="localhost:3000/thanks.html" />
+      <div class="flex flex-col px-8 pt-6 pb-8 my-2 mb-4 text-left">
+        <div class="-mx-3 md:flex">
+          <div class="px-3 mb-6 md:w-1/3">
+            <label
+              class="block mb-2 text-xs font-bold tracking-wide text-gray-500 uppercase"
+              for="grid-name">
+              Name (required)
+            </label>
+            <input
+              class="block w-full px-4 py-3 mb-3 text-gray-900 bg-gray-100 bg-opacity-25 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-400"
+              id="grid-name" type="text" placeholder="Your Name" name="name"
+              required />
+          </div>
+          <div class="px-3 mb-6 md:w-1/3">
+            <label
+              class="block mb-2 text-xs font-bold tracking-wide text-gray-500 uppercase"
+              for="grid-phone-number">
+              Phone Number (required)
+            </label>
+            <input
+              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 bg-opacity-25 border border-gray-300 rounded appearance-none bg-gra-100 focus:outline-none focus:bg-white focus:border-gray-400"
+              id="grid-phone-number" type="tel" placeholder="Your phone number"
+              name="phone" required />
+          </div>
+          <div class="px-3 mb-6 md:w-1/3">
+            <label
+              class="block mb-2 text-xs font-bold tracking-wide text-gray-500 uppercase"
+              for="grid-email">
+              Email
+            </label>
+            <input
+              class="block w-full px-4 py-3 text-gray-900 bg-gray-100 bg-opacity-25 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-400"
+              id="grid-email" type="email" placeholder="Your Email Address"
+              name="_replyto" />
+          </div>
+        </div>
+
+        <div class="flex flex-wrap justify-between -mx-3">
+          <div class="w-full px-3 mb-6 md:w-2/3 md:mb-0">
+            <label
+              class="block mb-2 text-xs font-bold tracking-wide text-gray-500 uppercase"
+              for="grid-message">
+              Message (optional)
+            </label>
+            <div class="relative">
+              <textarea
+                class="block w-full h-32 px-4 py-3 pr-8 leading-tight text-gray-900 bg-gray-100 bg-opacity-25 border border-gray-300 rounded appearance-none focus:outline-none focus:bg-white focus:border-gray-400"
+                id="grid-message" name="message"></textarea>
+            </div>
+          </div>
+          <div class="self-end w-full px-3 md:w-1/3 md:mt-6">
+            <button type="submit"
+              class="inline-flex justify-center w-full px-6 py-4 font-bold tracking-wide text-white uppercase bg-blue-500 border-b-4 border-blue-700 rounded shadow-lg appearance-none hover:bg-blue-600 hover:shadow-md">
+              <span class="mr-2 whitespace-nowrap">Submit Request</span>
+              <svg xmlns="http://www.w3.org/2000/svg" class="" width="24"
+                height="24" viewBox="0 0 24 24">
+                <path fill="currentcolor"
+                  d="M2.01 21L23 12 2.01 3 2 10l15 2-15 2z"></path>
+              </svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </form>
+  </div>
+  </div>
+</section>
+{{/section}}
