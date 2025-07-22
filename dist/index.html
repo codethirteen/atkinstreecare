@@ -160,7 +160,7 @@
             class="border-b-4 border-transparent rounded xl:mr-3 hover:bg-gray-100 xl:hover:border-gray-300"
           >
             <a
-              class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
+              class="block py-2 text-xl text-gray-800 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
               href="index.html#services"
               @click="menuOpen = false"
               >Services</a
@@ -170,7 +170,7 @@
             class="border-b-4 border-transparent rounded xl:mr-3 hover:bg-gray-100 xl:hover:border-gray-300"
           >
             <a
-              class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
+              class="block py-2 text-xl text-gray-800 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
               href="index.html#why-us"
               @click="menuOpen = false"
               >Why Us?</a
@@ -180,7 +180,7 @@
             class="border-b-4 border-transparent rounded xl:mr-3 hover:bg-gray-100 xl:hover:border-gray-300"
           >
             <a
-              class="block py-2 text-xl text-gray-800 xl:px-4 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
+              class="block py-2 text-xl text-gray-800 xl:font-bold hover:text-gray-900 xl:rounded xl:px-6"
               href="contact.html"
               @click="menuOpen = false"
               >Contact</a
@@ -188,7 +188,7 @@
           </li>
           <li class="rounded xl:mr-3 hover:bg-blue-200">
             <a
-              class="block py-2 text-xl font-bold text-blue-600 bg-transparent xl:px-4 xl:bg-blue-500 xl:hover:bg-blue-600 xl:border-b-4 xl:border-blue-700 xl:text-white xl:rounded xl:px-6"
+              class="block py-2 text-xl font-bold text-blue-600 bg-transparent xl:bg-blue-500 xl:hover:bg-blue-600 xl:border-b-4 xl:border-blue-700 xl:text-white xl:rounded xl:px-6"
               href="#estimate"
               @click="menuOpen = false"
               >Free Estimate</a
@@ -196,7 +196,7 @@
           </li>
           <li class="rounded xl:mr-3 hover:bg-red-200">
             <a
-              class="block py-2 text-xl font-bold text-red-600 bg-transparent xl:px-4 xl:bg-red-500 xl:hover:bg-red-600 xl:border-b-4 xl:border-red-700 xl:text-white xl:rounded xl:px-6"
+              class="block py-2 text-xl font-bold text-red-600 bg-transparent xl:bg-red-500 xl:hover:bg-red-600 xl:border-b-4 xl:border-red-700 xl:text-white xl:rounded xl:px-6"
               href="emergency.html"
               @click="menuOpen = false"
               >Emergency</a
@@ -258,8 +258,24 @@
         class="absolute inset-0 flex items-center justify-center w-full h-full"
       >
         <span class="text-3xl font-bold leading-normal text-white"
-          >SPRING<br />CLEANING</span
-        >
+            ><span id="seasonal-hero-title">SPRING<br />CLEANING</span></span>
+            <script>
+            (function() {
+              const titles = {
+              spring: "SPRING<br />CLEANING",
+              summer: "SUMMER<br />MAINTENANCE",
+              fall: "FALL<br />PREP",
+              winter: "WINTER<br />PRUNING"
+              };
+              const month = new Date().getMonth();
+              let season = "spring";
+              if (month >= 2 && month <= 4) season = "spring";
+              else if (month >= 5 && month <= 7) season = "summer";
+              else if (month >= 8 && month <= 10) season = "fall";
+              else season = "winter";
+              document.getElementById("seasonal-hero-title").innerHTML = titles[season];
+            })();
+            </script>
       </div>
     </div>
     <div
@@ -267,7 +283,26 @@
     >
       <div class="px-6 py-4 md:pr-24 md:pl-16 md:py-12">
         <p class="text-gray-600">
-          Spring is the perfect time to provide your trees with some extra love and attention. Removing dead or damaged limbs in early Spring will help encourage new, healthy growth. There are also fewer bugs and pests and a lower risk for disease. Flowering trees, in particular, will flourish and thrive after a proper Springtime pruning!
+          <span id="seasonal-message">
+            Spring is the perfect time to provide your trees with some extra love and attention. Removing dead or damaged limbs in early Spring will help encourage new, healthy growth. There are also fewer bugs and pests and a lower risk for disease. Flowering trees, in particular, will flourish and thrive after a proper Springtime pruning!
+          </span>
+          <script>
+            (function() {
+              const messages = {
+                spring: "Spring is the perfect time to provide your trees with some extra love and attention. Removing dead or damaged limbs in early Spring will help encourage new, healthy growth. There are also fewer bugs and pests and a lower risk for disease. Flowering trees, in particular, will flourish and thrive after a proper Springtime pruning!",
+                summer: "Summer is ideal for monitoring your trees for pests, disease, and storm damage. Regular watering and mulching help trees stay healthy through the heat. Pruning can be done to remove hazardous limbs and maintain tree shape.",
+                fall: "Fall is the best time to prepare your trees for winter. Removing weak or dead branches and cleaning up fallen leaves helps prevent disease and encourages strong growth in the coming year.",
+                winter: "Winter is a great time for tree pruning and maintenance. With trees dormant and leaves gone, it's easier to spot structural issues and prune safely, setting your trees up for healthy spring growth."
+              };
+              const month = new Date().getMonth();
+              let season = "spring";
+              if (month >= 2 && month <= 4) season = "spring";
+              else if (month >= 5 && month <= 7) season = "summer";
+              else if (month >= 8 && month <= 10) season = "fall";
+              else season = "winter";
+              document.getElementById("seasonal-message").textContent = messages[season];
+            })();
+          </script>
         </p>
         <a
           class="flex items-baseline mt-3 text-red-600 hover:text-red-900 focus:text-red-900"
